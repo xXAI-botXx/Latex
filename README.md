@@ -9,6 +9,11 @@ Contents:
 - [Write a Presentation](#write-a-presentation)
 
 
+<br>
+
+> You can use the [.gitignore](./.gitignore) file for your project. It contains most latex outputs.
+
+
 <br><br>
 
 ---
