@@ -1,22 +1,18 @@
 # Latex
 Helper Project for using Latex
 
-- [Basics](#basics)
-    - [General](#general)
-    - [Quick Start](#quick-start)
-    - [Write a Thesis](#write-a-thesis)
-    - [Write a Book](#write-a-book)
-- [Cite](#cite)
+Contents:
+- [General](#general)
+- [Quick Start](#quick-start)
+- [Write a Thesis](#write-a-thesis)
+- [Write a Book](#write-a-book)
+- [Write a Presentation](#write-a-presentation)
 
+
+<br><br>
 
 ---
-### Basics
-
----
-
-
-
-#### General
+### General
 
 LaTeX is a language for defining the appearance of text and images. Pronounced as "latech". There are many formats to create, for example thesis, books, presentations, curriculum vitae and much more.<br>In comparison to Word and other modern writing software, LaTeX does not provide any graphical interface but shines with much customizability and flexiblity. And Latex is textbased, so it can be versionated via git or other programs, which is very important when writing a book or a huge thesis, to make the process save and without sorries and worries.<br>
 Another reason why Latex is so famous are the extensions. There are extensions for the base file which defines your frame (document class), for styling (packages), for blueprints/templates which can be customized and used and for other things (like bundles). Most LaTeX distributions/compilers comes with many useful extensions, like common class types.
@@ -47,8 +43,93 @@ To make this more comfortable you also can open the setting on you TexStudio go 
 
 <br><br>
 
+Lastly lets talk about **compiling your work** into a pdf or whatever you want. First make sure that your latex compiler is setup right:
+```bash
+pdflatex --version
+```
+
+<br><br>
+
+Next lets compile your work into a **PDF**:
+Open your shell (bash, cmd, powershell) and naviagte to your project folder. Next you can call the command from your compiler.
+```bash
+D: && cd D:/Informatik/Projekte/AI
+pdflatex ai.tex
+```
+Most IDEs already include such commands inside and you most likely just have to click on the green run button.
+
+If you use BibTex you should compile like that:
+```bash
+pdflatex myfile.tex
+bibtex myfile
+pdflatex myfile.tex
+pdflatex myfile.tex
+```
+
+Or if you use BibTex with Biber, you have to compile like that:
+```bash
+pdflatex myfile.tex
+biber myfile
+pdflatex myfile.tex
+pdflatex myfile.tex
+```
+
+<br><br>
+
+Next lets compile your work into a **E-Book**:
+Standard latex compiler does not provide an ebook conversion, but you can use other software like pandoc.
+1. Download and install pandoc from: https://pandoc.org/installing.html
+2. Now you have to open your command terminal (bash, cmd, powershell) and navigate to your project and type the command to convert your tex into an epub file:
+    ```bash
+    D: && cd D:/Informatik/Projekte/AI
+    pandoc ai.tex -o ai.epub
+    ```
+    Change the tex and epub file name as you wish.
+
+
+<br><br>
+
+Next lets compile your work into a **Word**:
+Standard latex compiler does not provide an word conversion, but you can use other software like pandoc.
+1. Download and install pandoc from: https://pandoc.org/installing.html
+2. Now you have to open your command terminal (bash, cmd, powershell) and navigate to your project and type the command to convert your tex into an epub file:
+    ```bash
+    D: && cd D:/Informatik/Projekte/AI
+    pandoc ai.tex -o ai.docx
+    ```
+    Change the tex and docx file name as you wish.
+
+
+<br><br>
+
+Next lets compile your work into a **HTML**:
+Standard latex compiler does not provide an html conversion, but you can use other software like pandoc.
+1. Download and install pandoc from: https://pandoc.org/installing.html
+2. Now you have to open your command terminal (bash, cmd, powershell) and navigate to your project and type the command to convert your tex into an epub file:
+    ```bash
+    D: && cd D:/Informatik/Projekte/AI
+    pandoc ai.tex -o ai.html
+    ```
+    Change the tex and html file name as you wish.
+
+
+<br><br>
+
+Next lets compile your work into a **Markdown**:
+Standard latex compiler does not provide an markdown conversion, but you can use other software like pandoc.
+1. Download and install pandoc from: https://pandoc.org/installing.html
+2. Now you have to open your command terminal (bash, cmd, powershell) and navigate to your project and type the command to convert your tex into an epub file:
+    ```bash
+    D: && cd D:/Informatik/Projekte/AI
+    pandoc ai.tex -o ai.md
+    ```
+    Change the tex and md file name as you wish.
+
+
+<br><br>
+
 ---
-#### Quick Start
+### Quick Start
 
 For modern and feature-rich class-types the bundle **KOMA-Script** is the perfect choice and does provide you all the need for a quick document (but of cause also for large documents). Classes from the KOMA-Scripts bundle starts with *scr* (which stands for Script, the orignal name of the bundle). For example the class type **scrartcl** for a modern article class type.
 
@@ -117,7 +198,7 @@ You have to compile your latex code most likely 2 times, because links (with lab
 <br><br>
 
 ---
-#### Write a Thesis
+### Write a Thesis
 
 You always have the choice if you want to build your own latex code from ground up or use a template. Both ways are valid and sometimes one is better sometimes the other other apporach.<br>
 When coding your own code, you should inform yourself and if you use a template, you should choose wisely.<br>
@@ -156,20 +237,336 @@ Or for onesided:
 And if you want to use a package you call `\usepackage` or `\RequirePackage` if you call it before the `\documentclass` command.
 
 
+To summarize these little details in the big picture. You can start your thesis from scratch, I will show you a very simple template/starting-point in a minute. But for a thesis it is more recommended to use a well-known template from the internet or from your university.<br>
+Another important aspect is the **citation**. Here latex provide a extension called BibTex which is very powerfull and easy to use. Just create a .bib file where you pass all your citation references:
+
+For example:
+```bib
+@book{knuth1984texbook,
+  author    = {Donald E. Knuth},
+  title     = {The TeXbook},
+  year      = {1984},
+  publisher = {Addison-Wesley}
+}
+
+@article{yann1989backprop,
+  author  = {Yann LeCun and Léon Bottou and Yoshua Bengio and Patrick Haffner},
+  title   = {Gradient-Based Learning Applied to Document Recognition},
+  journal = {Proceedings of the IEEE},
+  year    = {1998},
+  volume  = {86},
+  number  = {11},
+  pages   = {2278--2324}
+}
+```
+
+Now you can set your citation style inside of latex and import your citations:
+```latex
+\usepackage[style=apa, backend=bibtex]{biblatex} % or style=numeric, authoryear, etc.
+\addbibresource{your_bib_file_name.bib} % Link to your .bib file
+```
+
+or with biber:
+```latex
+\usepackage[style=apa, backend=biber]{biblatex} % or style=numeric, authoryear, etc.
+\addbibresource{your_bib_file_name.bib} % Link to your .bib file
+```
+
+And use your citiation as:
+```latex
+\begin{document}
+
+As shown by \cite{mueller2020}, the model is quite accurate. 
+In a similar study, \citeauthor{mueller2020} (2020) demonstrated...
+
+\printbibliography
+
+\end{document}
+```
+
+There are many ways to cite:
+
+| Command                | Output (for `numeric` style)            |
+|------------------------|----------------------------------------|
+| `\cite{key}`            | [1]                                    |
+| `\textcite{key}`        | [1] — like `\cite{}` but as inline text |
+| `\parencite{key}`       | [1] — same as `\cite{}`                |
+| `\footcite{key}`        | Footnote with full citation            |
+| `\citeauthor{key}`      | Author's name (Müller)                 |
+| `\citeyear{key}`        | Year (2020)                            |
+| `\citetitle{key}`       | *Title of the work*                    |
+| `\citeurl{key}`         | URL (if available in the entry)        |
+
+
+
+If you use BibTex with Biber, you have to compile like that:
+```bash
+pdflatex myfile.tex
+biber myfile
+pdflatex myfile.tex
+pdflatex myfile.tex
+```
+
+Or if you use BibTex, you have to compile like that:
+```bash
+pdflatex myfile.tex
+bibtex myfile
+pdflatex myfile.tex
+pdflatex myfile.tex
+```
+
+<br><br>
+
+Here is a very very simple template for a thesis, you might want to adjust things like the cover page, oneside or twoside...
+
+Structure:
+```
+thesis/
+├── thesis.tex          % Main file
+├── preamble.tex        % All settings & packages
+├── content/
+│   ├── titlepage.tex
+│   ├── abstract.tex
+│   ├── chapter1.tex
+│   ├── chapter2.tex
+│   └── appendix.tex
+├── references.bib
+```
+
+./preambel.tex
+```latex
+% Preamble for thesis
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% For bibliography
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% Optional: Nicer header/footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+```
+
+./content/titlepage.tex
+```latex
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE University Name \par}
+    \vspace{1.5cm}
+    {\scshape\Large Bachelor's Thesis \par}
+    \vspace{2cm}
+    {\huge\bfseries Title of Your Thesis\par}
+    \vspace{2cm}
+    {\Large Author: Tobia Ippolito\par}
+    \vspace{0.5cm}
+    {\large Supervisor: Prof. Dr. XYZ\par}
+    \vfill
+    {\large \today\par}
+\end{titlepage}
+```
+
+./content/abstract.tex
+```latex
+\chapter*{Abstract}
+\label{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This thesis investigates the role of...
+```
+
+./content/chapter1.tex
+```latex
+\chapter{Introduction}
+This is the introduction. See work by \cite{mueller2020} for more details.
+```
+
+./references.bib
+```latex
+@book{mueller2020,
+  author    = {Max Müller},
+  title     = {Introduction to AI},
+  year      = {2020},
+  publisher = {Tech Press}
+}
+```
+
+And you can compile your work with:
+1. Open your bash/cmd
+2. Navigate to your project
+3. Run:
+    ```bash
+    pdflatex thesis.tex
+    biber thesis
+    pdflatex thesis.tex
+    pdflatex thesis.tex
+    ```
+
+
 <br><br>
 
 ---
-#### Write a Book
+### Write a Book
 
 A book is different from a thesis, other spacings, other page size and much more. The KOMA-Script documentclass **scrbook** is perfect for this subject.
 
+I show a simple but good template for a book. Feel free to customize it for your need!
+
+./ai.tex (your main file)
+```latex
+% Main Document %
+
+% Check Compiler: pdflatex --version
+
+% PDF:
+%    Open cmd/powershell + Run: 
+%    		D: && cd D:/Informatik/Projekte/AI
+%    		pdflatex ai.tex
+% EBOOK: 
+%    Download: https://pandoc.org/installing.html
+%    Open cmd/powershell + Run: 
+% 			D: && cd D:/Informatik/Projekte/AI
+%    		pandoc ai.tex -o ai.epub
+
+% Load + Define document
+\documentclass[fontsize=11pt,paper=a5,pagesize=auto]{scrbook}
+
+\include{preambel}
+
+% Start Document
+\begin{document}
+
+% First pages
+\maketitle
+\tableofcontents
+
+% Add Content
+\include{content/preface}
+\part{Basics}
+\include{content/part_basics/introduction}
+\include{content/part_basics/machine_learning}
+\include{content/part_basics/neural_networks}
+\include{content/part_basics/foundation_models}
+\part{Neural Networks}
+\include{content/part_neural_networks/architectures}
+\include{content/part_neural_networks/learning_methods}
+% FIXME ...
+
+% \appendix
+% \include{}
+
+\end{document}
+```
+
+./preamble.tex (your preambel file)
+```latex
+
+% === === ===
+% Extensions
+% === === ===
+% Set margins
+\usepackage[
+	a5paper,
+	top=2cm,
+	bottom=2cm,
+	left=2cm,
+	right=2cm
+]{geometry}
+
+% Font encoding & Font Style
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Dummy Texts
+\usepackage[english]{babel}  % required from blindtext
+\usepackage{blindtext}
+
+% Better text justification
+\usepackage{microtype}
+
+% Turn-Off additional space after a sentence
+\frenchspacing
+
+% Make hpyer links and references and table-of-content clickable
+\usepackage[
+	colorlinks=true,
+	linkcolor=black,      % for table-of-content & ref
+	urlcolor=blue,       % for URL links
+	citecolor=blue       % for \cite
+]{hyperref}
+
+
+% === === ===
+% General Book Information
+% === === ===
+\title{Artificial Intelligence}
+\subtitle{Naked and ready for Use}
+\author{Tobia Ippolito}
+\date{}
+```
+
+./content/preface.tex (your preface file)
+```latex
+\chapter{Preface}
+\label{cha:preface}
+
+
+
+    \section{Foreword}
+    \label{sec:foreword}
+        Why the book got created? Why is it relevant for anyone? \\
+        \\
+        \Blindtext
+
+
+
+    \section{What to Expect}
+    \label{sec:what-to-expect}
+        Expectations are important\dots \\
+        \blindtext
+
+
+        
+    \section{The Author}
+    \label{sec:the-author}
+        Why should you read a book from the author? What are the sources of the autor? Experience? Books? AI? \\
+        \\
+        \blindtext
+```
+
+./content/part_basics/introduction.tex (one of your content file)
+```latex
+\chapter{Introduction}
+\label{cha:introduction}
+
+	\Blindtext
+```
+
+And like that you can more content.
 
 <br><br>
 
 ---
-### Cite
+### Write a Presentation
 
-...
+Coming soon...
+
+
+
 
 
 
