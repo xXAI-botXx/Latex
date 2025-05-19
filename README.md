@@ -2,6 +2,7 @@
 Helper Project for using Latex
 
 Contents:
+- [Examples](#examples)
 - [General](#general)
 - [Quick Start](#quick-start)
 - [Write a Thesis](#write-a-thesis)
@@ -12,6 +13,19 @@ Contents:
 <br>
 
 > You can use the [.gitignore](./.gitignore) file for your project. It contains most latex outputs.
+
+
+<br><br>
+
+---
+### Examples
+
+- [Bachelor Exam](https://github.com/xXAI-botXx/Bachelor-Exam)
+- [Master Exam](https://github.com/xXAI-botXx/Master-Exam)
+- [Master Document](https://github.com/xXAI-botXx/Master-Exam/tree/main/doc/first_semester_documentation) -> not exam but a document about literature
+- [Automatic Latex Photo Album](https://github.com/xXAI-botXx/automatic_latex_photo_album)
+- [Book about anxiety](https://github.com/xXAI-botXx/projekt_angst)
+
 
 
 <br><br>
@@ -338,27 +352,119 @@ thesis/
 ├── references.bib
 ```
 
+./thesis.tex
+```tex
+% Main Document %
+
+% Check Compiler: pdflatex --version
+
+% PDF:
+%    Open cmd/powershell + Run: 
+%    		D: && cd D:/Informatik/Projekte/AI
+%    		pdflatex ai.tex
+% EBOOK: 
+%    Download: https://pandoc.org/installing.html
+%    Open cmd/powershell + Run: 
+% 			D: && cd D:/Informatik/Projekte/AI
+%    		pandoc ai.tex -o ai.epub
+
+% Load + Define document
+\documentclass[fontsize=11pt, paper=a4, pagesize=auto]{scrreprt}
+% \documentclass[fontsize=11pt, paper=a4, pagesize=auto]{scrartcl}
+
+\include{preambel}
+
+% Start Document
+\begin{document}
+
+% First pages
+\pagenumbering{roman}
+\maketitle
+% \include{content/titlepage}    % or use this title page
+\tableofcontents
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+% Add Content
+\include{content/abstract}
+\include{content/chapter1}
+% FIXME ...
+
+% Literature
+\pagenumbering{roman}
+\phantomsection  % Ensures correct hyperlinking
+\begin{flushleft}
+	\printbibliography[heading=bibintoc]
+\end{flushleft}
+
+% \appendix
+% \include{}
+
+\end{document}
+```
+
 ./preambel.tex
 ```latex
-% Preamble for thesis
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
-\usepackage{csquotes}
-\usepackage[a4paper,margin=2.5cm]{geometry}
-\usepackage{graphicx}
-\usepackage{amsmath, amssymb}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    citecolor=blue,
-    urlcolor=blue
-}
+% === === ===
+% Extensions
+% === === ===
 
-% For bibliography
-\usepackage[style=numeric,backend=biber]{biblatex}
+% Set margins
+\usepackage[
+	a4paper,
+	top=2.5cm,
+	bottom=2.5cm,
+	left=3cm,
+	right=3cm
+]{geometry}
+
+% Font encoding & Font Style
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Dummy Texts
+\usepackage[english]{babel}  % required for blindtext
+\usepackage{blindtext}
+
+% Better text justification
+\usepackage{microtype}
+
+% Turn off additional space after a sentence
+\frenchspacing
+
+% Make hyperlinks and references clickable
+\usepackage[
+	colorlinks=true,
+	linkcolor=black,      % for table of contents & \ref
+	urlcolor=blue,        % for URL links
+	citecolor=blue        % for \cite
+]{hyperref}
+
+% Optional: Add spacing between paragraphs instead of indentation
+\KOMAoptions{parskip=half}
+
+% Optional: Slightly more readable line spacing
+\usepackage{setspace}
+\onehalfspacing
+
+% Add Literature
+\usepackage[style=ieee, 
+		    backend=biber, 
+		    isbn=true,
+		    sortlocale=en_US]{biblatex}                  % Hyperlinks für Ziate]{biblatex}
 \addbibresource{references.bib}
+\setlength{\bibitemsep}{1em}     % Distance between the bib entries
+\setlength{\bibhang}{2em}        % Distance after a new bib page
+% Splitting URLs ib bib
+\defcounter{biburlnumpenalty}{10} % Penalty for splitting a number
+\defcounter{biburlucpenalty}{500}  % Penalty for capital letters
+\defcounter{biburllcpenalty}{500}  % Penalty for lower letters
+
+% For Images
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{placeins}
 
 % Optional: Nicer header/footer
 \usepackage{fancyhdr}
@@ -366,6 +472,15 @@ thesis/
 \fancyhf{}
 \fancyhead[L]{\leftmark}
 \fancyfoot[C]{\thepage}
+
+
+% === === ===
+% General Book Information
+% === === ===
+\title{1. Semester Documentation}
+\subtitle{Can generative models learn complex relations?}
+\author{Tobia Ippolito}
+\date{}
 ```
 
 ./content/titlepage.tex
