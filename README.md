@@ -704,6 +704,8 @@ Here are some important and helpful latex snippets for math usage.
 - Rational numbers: $\mathbb{Q} = \left\{ \frac{p}{q} \mid p \in \mathbb{Z}, q \in \mathbb{N} \right\}$
 - Real numbers: $\mathbb{R}$
 - Complex numbers: $\mathbb{C} = \{ a + bi \mid a, b \in \mathbb{R}, i^2 = -1 \}$
+
+- Membership symbol: $s \in \mathbb{Z}$ or $s \notin \mathbb{N}$
 ```
 Will be:
 - Natural numbers: $\mathbb{N} = \{1, 2, 3, \dots\}$
@@ -711,6 +713,7 @@ Will be:
 - Rational numbers: $\mathbb{Q} = \left\{ \frac{p}{q} \mid p \in \mathbb{Z}, q \in \mathbb{N} \right\}$
 - Real numbers: $\mathbb{R}$
 - Complex numbers: $\mathbb{C} = \{ a + bi \mid a, b \in \mathbb{R}, i^2 = -1 \}$
+- Membership symbol: $s \in \mathbb{Z}$ or $s \notin \mathbb{N}$
 
 
 <br><br>
@@ -872,7 +875,7 @@ Will be:
 - Euler’s formula: $e^{i\theta} = \cos\theta + i\sin\theta$
 - Taylor series: $f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n$
 - Fourier series: $f(x) = a_0 + \sum_{n=1}^\infty \left( a_n \cos(nx) + b_n \sin(nx) \right)$
-- Gradient: $\nabla f = \left( \frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n} \right)$
+- Gradient:  $\nabla f(x_1, \dots, x_n) = \left( \frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n} \right)$
 - Differential equation: $\frac{dy}{dx} + P(x)y = Q(x)$
 ```
 
@@ -880,7 +883,7 @@ Will be:
 - Euler’s formula: $e^{i\theta} = \cos\theta + i\sin\theta$
 - Taylor series: $f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n$
 - Fourier series: $f(x) = a_0 + \sum_{n=1}^\infty \left( a_n \cos(nx) + b_n \sin(nx) \right)$
-- Gradient: $\nabla f = \left( \frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n} \right)$
+- Gradient: $\nabla f(x_1, \dots, x_n) = \left( \frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n} \right)$
 - Differential equation: $\frac{dy}{dx} + P(x)y = Q(x)$
 
 
@@ -888,7 +891,8 @@ Will be:
 
 **Multiline Math Expressions**
 
-Use `$$` to start and end the multiline math expression and use `\\` to end a line:
+Use `$$` to start and end the multiline math expression and use `\\` to end a line.
+> Note that sometimes you have to use the `amsmath` package.
 
 ```latex
 $$
