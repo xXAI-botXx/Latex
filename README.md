@@ -8,6 +8,7 @@ Contents:
 - [Write a Thesis](#write-a-thesis)
 - [Write a Book](#write-a-book)
 - [Write a Presentation](#write-a-presentation)
+- [Math](#math)
 
 
 <br>
@@ -686,11 +687,253 @@ And like that you can more content.
 Coming soon...
 
 
+<br><br>
+
+---
+### Math
+
+Here are some important and helpful latex snippets for math usage.
+
+<br>
+
+**Numbers and Sets**
+
+```latex
+- Natural numbers: $\mathbb{N} = \{1, 2, 3, \dots\}$
+- Integers: $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots\}$
+- Rational numbers: $\mathbb{Q} = \left\{ \frac{p}{q} \mid p \in \mathbb{Z}, q \in \mathbb{N} \right\}$
+- Real numbers: $\mathbb{R}$
+- Complex numbers: $\mathbb{C} = \{ a + bi \mid a, b \in \mathbb{R}, i^2 = -1 \}$
+```
+Will be:
+- Natural numbers: $\mathbb{N} = \{1, 2, 3, \dots\}$
+- Integers: $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots\}$
+- Rational numbers: $\mathbb{Q} = \left\{ \frac{p}{q} \mid p \in \mathbb{Z}, q \in \mathbb{N} \right\}$
+- Real numbers: $\mathbb{R}$
+- Complex numbers: $\mathbb{C} = \{ a + bi \mid a, b \in \mathbb{R}, i^2 = -1 \}$
 
 
+<br><br>
+
+**Algebra Basics**
+
+```latex
+- Distributive property: $a(b + c) = ab + ac$
+- Associative property: $(a+b)+c = a+(b+c)$
+- Commutative property: $a+b = b+a, \quad ab = ba$
+- Binomial theorem: $(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k$
+```
+Will be:
+- Distributive property: $a(b + c) = ab + ac$
+- Associative property: $(a+b)+c = a+(b+c)$
+- Commutative property: $a+b = b+a, \quad ab = ba$
+- Binomial theorem: $(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k$
 
 
+<br><br>
 
+**Equations and Inequalities**
+
+```latex
+- Linear equation: $ax + b = 0 \quad \Rightarrow \quad x = -\frac{b}{a}$
+- Quadratic equation: $ax^2 + bx + c = 0 \quad \Rightarrow \quad x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+- Inequalities: if $a > b$ and $c > 0$, then $ac > bc$.
+```
+Will be:
+- Linear equation: $ax + b = 0 \quad \Rightarrow \quad x = -\frac{b}{a}$
+- Quadratic equation: $ax^2 + bx + c = 0 \quad \Rightarrow \quad x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+- Inequalities: if $a > b$ and $c > 0$, then $ac > bc$.
+
+
+<br><br>
+
+**Functions**
+
+```latex
+- Definition: $f: A \to B, \; x \mapsto f(x)$
+- Example: $f(x) = x^2 + 2x + 1$
+- Inverse: if $f(x) = y$, then $f^{-1}(y) = x$
+- Composition: $(f \circ g)(x) = f(g(x))$
+```
+Will be:
+- Definition: $f: A \to B, \; x \mapsto f(x)$
+- Example: $f(x) = x^2 + 2x + 1$
+- Inverse: if $f(x) = y$, then $f^{-1}(y) = x$
+- Composition: $(f \circ g)(x) = f(g(x))$
+
+
+<br><br>
+
+**Trigonometry**
+
+```latex
+- Unit circle definitions:
+  $\sin(\theta) = \frac{\text{opposite}}{\text{hypotenuse}}$, 
+  $\cos(\theta) = \frac{\text{adjacent}}{\text{hypotenuse}}$, 
+  $\tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)}$
+- Pythagorean identity: $\sin^2(\theta) + \cos^2(\theta) = 1$
+- Angle addition: 
+  $\sin(a+b) = \sin a \cos b + \cos a \sin b$  
+  $\cos(a+b) = \cos a \cos b - \sin a \sin b$
+```
+Will be:
+- Unit circle definitions:
+  $\sin(\theta) = \frac{\text{opposite}}{\text{hypotenuse}}$, 
+  $\cos(\theta) = \frac{\text{adjacent}}{\text{hypotenuse}}$, 
+  $\tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)}$
+- Pythagorean identity: $\sin^2(\theta) + \cos^2(\theta) = 1$
+- Angle addition: 
+  $\sin(a+b) = \sin a \cos b + \cos a \sin b$  
+  $\cos(a+b) = \cos a \cos b - \sin a \sin b$
+
+
+<br><br>
+
+**Calculus – Derivatives**
+
+```latex
+- Definition: $f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$
+- Power rule: $\frac{d}{dx}(x^n) = nx^{n-1}$
+- Product rule: $(fg)' = f'g + fg'$
+- Quotient rule: $\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$
+- Chain rule: $(f(g(x)))' = f'(g(x)) \cdot g'(x)$
+```
+Will be:
+- Definition: $f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$
+- Power rule: $\frac{d}{dx}(x^n) = nx^{n-1}$
+- Product rule: $(fg)' = f'g + fg'$
+- Quotient rule: $\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$
+- Chain rule: $(f(g(x)))' = f'(g(x)) \cdot g'(x)$
+
+
+<br><br>
+
+**Calculus – Integrals**
+
+```latex
+- Indefinite integral: $\int f'(x)\, dx = f(x) + C$
+- Definite integral: $\int_a^b f(x)\, dx = F(b) - F(a)$
+- Fundamental theorem: $\frac{d}{dx} \left( \int_a^x f(t)\,dt \right) = f(x)$
+- Example: $\int x^n dx = \frac{x^{n+1}}{n+1} + C, \quad n \neq -1$
+```
+
+Will be:
+- Indefinite integral: $\int f'(x)\, dx = f(x) + C$
+- Definite integral: $\int_a^b f(x)\, dx = F(b) - F(a)$
+- Fundamental theorem: $\frac{d}{dx} \left( \int_a^x f(t)\,dt \right) = f(x)$
+- Example: $\int x^n dx = \frac{x^{n+1}}{n+1} + C, \quad n \neq -1$
+
+
+<br><br>
+
+**Linear Algebra**
+
+```latex
+- Vector: $\vec{v} = (v_1, v_2, \dots, v_n)$
+- Dot product: $\vec{a} \cdot \vec{b} = \sum_{i=1}^n a_i b_i$
+- Matrix multiplication: $(AB)_{ij} = \sum_k A_{ik} B_{kj}$
+- Determinant (2x2): $\det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc$
+- Inverse: $A^{-1}A = I$
+```
+
+Will be:
+- Vector: $\vec{v} = (v_1, v_2, \dots, v_n)$
+- Dot product: $\vec{a} \cdot \vec{b} = \sum_{i=1}^n a_i b_i$
+- Matrix multiplication: $(AB)_{ij} = \sum_k A_{ik} B_{kj}$
+- Determinant (2x2): $\det \begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc$
+- Inverse: $A^{-1}A = I$
+
+
+<br><br>
+
+**Probability and Statistics**
+
+```latex
+- Probability: $P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}$
+- Conditional probability: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+- Expectation: $\mathbb{E}[X] = \sum x_i p_i$
+- Variance: $\mathrm{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2]$
+- Normal distribution: $f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$
+```
+
+Will be:
+- Probability: $P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}$
+- Conditional probability: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+- Expectation: $\mathbb{E}[X] = \sum x_i p_i$
+- Variance: $\mathrm{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2]$
+- Normal distribution: $f(x) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$
+
+
+<br><br>
+
+**Advanced Topics**
+
+```latex
+- Euler’s formula: $e^{i\theta} = \cos\theta + i\sin\theta$
+- Taylor series: $f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n$
+- Fourier series: $f(x) = a_0 + \sum_{n=1}^\infty \left( a_n \cos(nx) + b_n \sin(nx) \right)$
+- Gradient: $\nabla f = \left( \frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n} \right)$
+- Differential equation: $\frac{dy}{dx} + P(x)y = Q(x)$
+```
+
+Will be:
+- Euler’s formula: $e^{i\theta} = \cos\theta + i\sin\theta$
+- Taylor series: $f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n$
+- Fourier series: $f(x) = a_0 + \sum_{n=1}^\infty \left( a_n \cos(nx) + b_n \sin(nx) \right)$
+- Gradient: $\nabla f = \left( \frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n} \right)$
+- Differential equation: $\frac{dy}{dx} + P(x)y = Q(x)$
+
+
+<br><br>
+
+**Multiline Math Expressions**
+
+Use `$$` to start and end the multiline math expression and use `\\` to end a line:
+
+```latex
+$$
+\mathbb{N} = \{1, 2, 3, \dots\} \\
+\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots\} \\
+\mathbb{Q} = \left\{ \frac{p}{q} \;\middle|\; p \in \mathbb{Z}, q \in \mathbb{N} \right\} \\
+\mathbb{R}, \quad \mathbb{C} = \{ a + bi \mid a,b \in \mathbb{R}, i^2 = -1 \}
+$$
+```
+Will be:
+$$
+\mathbb{N} = \{1, 2, 3, \dots\} \\
+\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots\} \\
+\mathbb{Q} = \left\{ \frac{p}{q} \;\middle|\; p \in \mathbb{Z}, q \in \mathbb{N} \right\} \\
+\mathbb{R}, \quad \mathbb{C} = \{ a + bi \mid a,b \in \mathbb{R}, i^2 = -1 \}
+$$
+
+<br><br>
+
+The **align** environment centers the equations:
+```latex
+$$
+\begin{align}
+\mathbb{N} &= \{1, 2, 3, \dots\} \\
+\mathbb{Z} &= \{\dots, -2, -1, 0, 1, 2, \dots\} \\
+\mathbb{Q} &= \left\{ \tfrac{p}{q} \;\middle|\; p \in \mathbb{Z}, q \in \mathbb{N} \right\} \\
+\mathbb{R}, \quad 
+\mathbb{C} &= \{ a + bi \mid a,b \in \mathbb{R}, i^2 = -1 \}
+\end{align}
+$$
+```
+Will be:
+$$
+\begin{align}
+\mathbb{N} &= \{1, 2, 3, \dots\} \\
+\mathbb{Z} &= \{\dots, -2, -1, 0, 1, 2, \dots\} \\
+\mathbb{Q} &= \left\{ \tfrac{p}{q} \;\middle|\; p \in \mathbb{Z}, q \in \mathbb{N} \right\} \\
+\mathbb{R}, \quad 
+\mathbb{C} &= \{ a + bi \mid a,b \in \mathbb{R}, i^2 = -1 \}
+\end{align}
+$$
+
+<br><br>
+
+---
 
 
 
